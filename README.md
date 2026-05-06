@@ -1,1 +1,1 @@
-# javascript
+# Лаборатнорные работы по javascript
