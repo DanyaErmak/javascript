@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Считать ворон</title>
+</head>
+<body>
+    <form id="f">
+        <p>
+            <label>
+                Количество
+                <input id="crowinput" required>
+            </label>
+        </p>
+        <input type="submit" value="считать">
+    </form>
+    <script>
+        'use strict';
+
+        f.addEventListener('submit', count);
+
+        function count(){
+            event.preventDefault();
+
+            let num = parseInt(crowinput.value, 10); 
+            if (!Number.isInteger(num)) {
+                alert("Пожалуйста, введите целое число.");
+                return;
+            }
+            const lastDigit = num % 10;
+            const lastTwoDigits = num % 100;
+            
+            let ending = "";
+
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 14){
+                ending = "ворон";
+            } else {
+                switch (lastDigit){
+                    case 1:
+                        ending = "ворона";
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                        ending = "вороны";
+                        break;
+                    default: 
+                        ending = "ворон";
+                        break;
+                }
+            }
+            alert(`На ветке сидит ${num} ${ending}`);
+        }
+    </script>
+</body>
+</html>
