@@ -64,7 +64,7 @@ export function isLeapYear(year) {
  * Возвращает факториал n.
  *
  * @param {number} n - неотрицательное число.
- * @return {bigint|number} NaN, если n - отрицательное или дробное, в остальных случаях - факториал n.
+ * @returns {bigint} Факториал числа в формате BigInt.
  */
 export function factorial(n) {
     if (!Number.isInteger(n) || n < 0) {
@@ -85,7 +85,7 @@ export function factorial(n) {
  * Считается, что fib(0) = 0 и fib(1) = 1.
  *
  * @param {number} n - целое число.
- * @return {number|bigint} NaN, если n - нецелое, в остальных случаях - соответствующее число Фибоначчи.
+ * @returns {bigint} Число Фибоначчи в формате BigInt.
  */
 export function fib(n) {
     if (!Number.isInteger(n)) {
