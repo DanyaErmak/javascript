@@ -16,11 +16,7 @@
    function goToLink(event) {
 
        if (!getNumber()) {
-
-           if (!confirm('Вы точно хотите перейти по ссылке без ввода числа?')) {
-               event.preventDefault();
-           }
-           
+            event.preventDefault()   
        }
 
    }
@@ -35,7 +31,7 @@
 
            }
 
-           if (x.trim() === '') {
+           if (x.trim() === '' || isNaN(x.trim())) {
                continue;
            }
 
