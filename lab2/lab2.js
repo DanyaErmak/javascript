@@ -56,7 +56,6 @@ export let sumTo = new Function('n', `
  * @return {boolean} true, если year соответствует високосному году, а в остальных случаях - false.
  */
 export function isLeapYear(year) {
-    // Лаконичное и читаемое стандартное правило
     return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
 }
 
