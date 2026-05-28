@@ -29,25 +29,20 @@
        event.preventDefault();
 
        const rowsCount = Number(rowsInput.value);
-       
-
        const pattern = ['dog', 'dog', 'dog', 'cat', 'cat'];
        const patternLength = pattern.length;
-       
-       let globalIndex = 0;
+       const colsCount = 6; 
 
-       for (let i = 0; i < rowsCount; i++) {
-           let currentRow = [];
+       // Генерируем массив строк, а внутри каждой строки — массив ячеек
+       const tableData = Array.from({ length: rowsCount }, (_, rowIndex) => {
+           return Array.from({ length: colsCount }, (_, colIndex) => {
+               // Вычисляем сквозной индекс без внешней переменной-счетчика
+               const globalIndex = rowIndex * colsCount + colIndex;
+               return pattern[globalIndex % patternLength];
+           });
+       });
 
-           for (let j = 0; j < 6; j++) {
-               let animal = pattern[globalIndex % patternLength];
-               currentRow.push(animal);
-               globalIndex++;
-           }
-
-  
-           console.log(currentRow.join('\t'));
-       }
+       tableData.forEach(row => console.log(row.join('\t')));
    }
   </script>
 
