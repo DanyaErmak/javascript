@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
-  <meta charset="UTF-8">
-  <title>Ввод числа</title>
- </head>
- <body>
 
-  <a id="link" href="../index.html">Получить число</a>
+<head>
+    <meta charset="UTF-8">
+    <title>Ввод числа</title>
+</head>
 
-  <script>
-   'use strict';
+<body>
 
-   document.getElementById('link').addEventListener('click', goToLink);
+    <a id="link" href="../index.html">Получить число</a>
 
-   function goToLink(event) {
+    <script>
+        'use strict';
 
-       if (!getNumber()) {
-            event.preventDefault()   
-       }
+        document.getElementById('link').addEventListener('click', goToLink);
 
-   }
+        function goToLink(event) {
 
-   function getNumber() {
+            if (!getNumber()) {
+                event.preventDefault()
+            }
 
-       while (true) {
-           let x = prompt('Введите число, большее 100:');
+        }
 
-           if (x === null) {
-               return false;
+        function getNumber() {
 
-           }
+            while (true) {
+                let x = prompt('Введите число, большее 100:');
 
-           if (x.trim() === '' || isNaN(x.trim())) {
-               continue;
-           }
+                if (x === null) {
+                    const isConfirm = confirm('Вы хотите перейти по ссылке без ввода числа?');
+                    return isConfirm;
+                }
 
-           if (Number(x) > 100) {
-               return true;
-           }
-       }
+                if (x.trim() === '' || isNaN(x.trim())) {
+                    continue;
+                }
 
-   }
-  </script>
+                if (Number(x) > 100) {
+                    return true;
+                }
+            }
 
- </body>
+        }
+    </script>
+
+</body>
+
 </html>
