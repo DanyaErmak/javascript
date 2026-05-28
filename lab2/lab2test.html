@@ -13,7 +13,6 @@
     <script>
         mocha.setup('bdd');
     </script>
-    <!-- Обновили Chai до 4.3.7 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
     <script>
         let assert = chai.assert;
@@ -21,8 +20,6 @@
 </head>
 
 <body>
-
-    <!-- Элемент для вывода результатов Mocha должен быть в теле документа перед запуском -->
     <div id="mocha"></div>
 
     <script type="module">
@@ -127,7 +124,6 @@
             });
         });
 
-        // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Запуск Mocha строго внутри модуля после регистрации всех describe
         mocha.run();
     </script>
 
