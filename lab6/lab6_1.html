@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Жанры музыки</title>
+</head>
+<body>
+
+  <select id="genres">
+    <option value="Rock">Рок</option>
+    <option value="Blues" selected>Блюз</option>
+  </select>
+
+  <script>
+    'use strict';
+
+    const genresSelect = document.getElementById('genres');
+
+    const selectedOption = genresSelect.options[genresSelect.selectedIndex];
+    console.log(`Значение: ${genresSelect.value}, Текст: ${selectedOption.text}`);
+
+    const classicOption = new Option('Классика', 'Classic', false, true);
+
+    genresSelect.append(classicOption);
+  </script>
+
+</body>
+</html>
